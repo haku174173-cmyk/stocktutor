@@ -1,0 +1,174 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-hi);
+}
+.titleIcon {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+}
+.hot .titleIcon {
+  color: var(--up);
+  background: var(--up-soft);
+}
+.ai .titleIcon {
+  color: var(--ai);
+  background: var(--ai-soft);
+}
+.chip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-mid);
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+  padding: 3px 8px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20px 1fr auto;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 11px;
+  background: transparent;
+  border: none;
+  border-radius: 9px;
+  text-align: left;
+  transition: background 0.12s;
+}
+.row:hover {
+  background: var(--bg-hover);
+}
+.rowActive {
+  background: var(--bg-elevated);
+  box-shadow: inset 2px 0 0 var(--ai);
+}
+
+.rank {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-align: center;
+}
+.rowActive .rank,
+.row:hover .rank {
+  color: var(--text-mid);
+}
+.rankTop {
+  color: var(--gold);
+}
+
+.info {
+  min-width: 0;
+}
+.name {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text-hi);
+  font-size: 14px;
+  font-weight: 600;
+}
+.nameText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sub {
+  margin-top: 3px;
+  font-size: 11.5px;
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.subCode {
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+}
+
+.nums {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+.metric {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+}
+.metricSub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-mid);
+}
+
+/* Recommendation probability bar (AI picks) */
+.recTag {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--ai);
+  background: var(--ai-soft);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+.probWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.probBar {
+  width: 46px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--bg-base);
+  overflow: hidden;
+}
+.probFill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--ai-dim), var(--ai));
+}
+.probVal {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ai);
+  min-width: 40px;
+  text-align: right;
+}

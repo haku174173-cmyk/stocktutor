@@ -1,0 +1,337 @@
+.panel {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ---- Header ---- */
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 18px;
+  background: linear-gradient(100deg, var(--ai-soft), transparent 70%);
+  border-bottom: 1px solid var(--border);
+}
+.headTitle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-hi);
+  letter-spacing: -0.01em;
+}
+.aiDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--ai);
+  box-shadow: 0 0 10px var(--ai-glow);
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+.headSub {
+  font-size: 11px;
+  color: var(--text-mid);
+  font-weight: 600;
+}
+
+/* ---- Trend hero ---- */
+.trendBlock {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.trendTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.trendBadge {
+  font-size: 15px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 8px;
+}
+.trendBadge.up {
+  color: var(--up);
+  background: var(--up-soft);
+  box-shadow: inset 0 0 0 1px rgba(255, 91, 91, 0.35);
+}
+.trendBadge.down {
+  color: var(--down);
+  background: var(--down-soft);
+  box-shadow: inset 0 0 0 1px rgba(77, 141, 255, 0.35);
+}
+.trendBadge.flat {
+  color: var(--flat);
+  background: rgba(154, 166, 180, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(154, 166, 180, 0.3);
+}
+
+.probRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.prob {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.probHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-mid);
+  font-weight: 600;
+}
+.probHead .mono {
+  color: var(--text-hi);
+  font-weight: 700;
+}
+.probTrack {
+  height: 6px;
+  border-radius: 4px;
+  background: var(--bg-base);
+  overflow: hidden;
+}
+.probBar {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+}
+.pUp {
+  background: linear-gradient(90deg, #b33, var(--up));
+}
+.pFlat {
+  background: var(--flat);
+}
+.pDown {
+  background: linear-gradient(90deg, #345, var(--down));
+}
+
+/* ---- Metric grid ---- */
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.metric {
+  background: var(--bg-panel);
+  padding: 13px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.metricLabel {
+  font-size: 11px;
+  color: var(--text-mid);
+  font-weight: 600;
+}
+.metricValue {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-hi);
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.tagGood {
+  color: var(--up);
+  background: var(--up-soft);
+}
+.tagWarn {
+  color: var(--gold);
+  background: rgba(240, 180, 41, 0.12);
+}
+
+.orderbook {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.stars {
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+.starOn {
+  color: var(--gold);
+}
+.starOff {
+  color: var(--border-strong);
+}
+
+/* ---- Verdict ---- */
+.verdict {
+  margin: 16px 18px;
+  padding: 15px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  position: relative;
+  overflow: hidden;
+}
+.verdictHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.confidence {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-hi);
+}
+.verdictAction {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 6px 0 12px;
+  color: var(--text-hi);
+}
+.confBar {
+  height: 8px;
+  border-radius: 5px;
+  background: var(--bg-base);
+  overflow: hidden;
+}
+.confFill {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* verdict tone accents */
+.toneBuy {
+  box-shadow: inset 3px 0 0 var(--up);
+}
+.toneBuy .confFill,
+.toneHold .confFill {
+  background: linear-gradient(90deg, #b33, var(--up));
+}
+.toneBuy .verdictAction,
+.toneBuy .confidence {
+  color: var(--up);
+}
+.toneTake {
+  box-shadow: inset 3px 0 0 var(--gold);
+}
+.toneTake .confFill {
+  background: linear-gradient(90deg, #a97b12, var(--gold));
+}
+.toneTake .verdictAction,
+.toneTake .confidence {
+  color: var(--gold);
+}
+.toneWait,
+.toneWatch {
+  box-shadow: inset 3px 0 0 var(--ai);
+}
+.toneWait .confFill,
+.toneWatch .confFill {
+  background: linear-gradient(90deg, var(--ai-dim), var(--ai));
+}
+.toneWait .verdictAction,
+.toneWait .confidence,
+.toneWatch .verdictAction,
+.toneWatch .confidence {
+  color: var(--ai);
+}
+.toneHold {
+  box-shadow: inset 3px 0 0 var(--up);
+}
+.toneHold .verdictAction,
+.toneHold .confidence {
+  color: var(--text-hi);
+}
+
+/* ---- Trade levels ---- */
+.levels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 0 18px 16px;
+}
+.level {
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: var(--bg-base);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.levelLabel {
+  font-size: 10.5px;
+  color: var(--text-mid);
+  font-weight: 600;
+}
+.levelValue {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-hi);
+}
+.level_ai {
+  border-color: rgba(46, 230, 196, 0.28);
+}
+.level_ai .levelLabel {
+  color: var(--ai);
+}
+.level_up {
+  border-color: rgba(255, 91, 91, 0.28);
+}
+.level_up .levelValue {
+  color: var(--up);
+}
+.level_down {
+  border-color: rgba(77, 141, 255, 0.28);
+}
+.level_down .levelValue {
+  color: var(--down);
+}
+
+/* ---- Explanation ---- */
+.explain {
+  padding: 16px 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.explain p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.72;
+  color: var(--text);
+}
+
+.disclaimer {
+  margin: 0;
+  padding: 0 18px 16px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+@media (max-width: 480px) {
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+  .levels {
+    grid-template-columns: 1fr;
+  }
+}

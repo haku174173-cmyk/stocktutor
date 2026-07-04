@@ -1,0 +1,133 @@
+.wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  transition: border-color 0.15s, color 0.15s;
+}
+.trigger:hover,
+.triggerOpen {
+  color: var(--gold);
+  border-color: var(--border-strong);
+}
+.trigger svg {
+  color: var(--gold);
+}
+
+.label {
+  white-space: nowrap;
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--bg-base);
+  background: var(--gold);
+  border-radius: 20px;
+  min-width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  padding: 0 5px;
+}
+
+/* ---- Panel ---- */
+.panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 320px;
+  padding: 8px;
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+  z-index: 200;
+  animation: rise 0.14s ease both;
+}
+
+.panelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px 10px;
+}
+.hint {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 10px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+}
+.row:hover {
+  background: var(--bg-hover);
+}
+
+.rowMain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.rowName {
+  color: var(--text-hi);
+  font-size: 14px;
+  font-weight: 600;
+}
+.rowCode {
+  color: var(--text-dim);
+  font-size: 11px;
+}
+.rowNums {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+.rowPrice {
+  color: var(--text);
+  font-size: 13px;
+}
+.rowChg {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .label {
+    display: none;
+  }
+  .panel {
+    width: 280px;
+  }
+}

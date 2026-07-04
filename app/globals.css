@@ -1,0 +1,164 @@
+/* ============================================================
+   StockTutor — Dark Trading Terminal Theme
+   ============================================================ */
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Surfaces */
+  --bg-base: #080b11;
+  --bg-panel: #0f141d;
+  --bg-panel-2: #131a25;
+  --bg-elevated: #182131;
+  --bg-hover: #1c2636;
+
+  /* Borders / lines */
+  --border: #1e2735;
+  --border-strong: #2b394d;
+  --grid-line: #141b26;
+
+  /* Text */
+  --text-hi: #e9eef6;
+  --text: #b9c4d4;
+  --text-mid: #7d8b9e;
+  --text-dim: #55606f;
+
+  /* Market semantics (Korean convention) */
+  --up: #ff5b5b;
+  --up-soft: rgba(255, 91, 91, 0.14);
+  --down: #4d8dff;
+  --down-soft: rgba(77, 141, 255, 0.14);
+  --flat: #9aa6b4;
+
+  /* AI signature accent */
+  --ai: #2ee6c4;
+  --ai-dim: #17a389;
+  --ai-soft: rgba(46, 230, 196, 0.12);
+  --ai-glow: rgba(46, 230, 196, 0.35);
+
+  /* Highlights */
+  --gold: #f0b429;
+
+  /* Type */
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+
+  /* Radius */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+
+  --header-h: 64px;
+  --tabs-h: 52px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-base);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  /* subtle atmospheric depth */
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(46, 230, 196, 0.05), transparent 60%),
+    radial-gradient(900px 500px at 0% 0%, rgba(77, 141, 255, 0.05), transparent 55%),
+    var(--bg-base);
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--ai-glow);
+  color: #04120f;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 20px;
+  border: 2px solid var(--bg-base);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #35455c;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1;
+}
+
+/* Reusable numeric colors */
+.c-up {
+  color: var(--up);
+}
+.c-down {
+  color: var(--down);
+}
+.c-flat {
+  color: var(--flat);
+}
+
+/* Panel primitive */
+.panel {
+  background: linear-gradient(180deg, var(--bg-panel-2), var(--bg-panel));
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+}
+
+/* thin uppercase label */
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  font-weight: 600;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 var(--ai-glow);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 0 5px transparent;
+  }
+}

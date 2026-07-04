@@ -1,0 +1,118 @@
+.tab {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 24px;
+  animation: rise 0.3s ease both;
+}
+
+/* ---- Top 3-card row ---- */
+.cardsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ---- Analysis container: 3/5 + 2/5 ---- */
+.container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 16px;
+  animation: rise 0.3s ease both;
+}
+
+.left {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stockHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 2px 4px 14px;
+  flex-wrap: wrap;
+}
+
+.stockId {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 3px 6px;
+  border-radius: 5px;
+  color: var(--text-mid);
+  border: 1px solid var(--border-strong);
+}
+.badge[data-market="KOSPI"] {
+  color: #7ab8ff;
+  border-color: rgba(122, 184, 255, 0.35);
+}
+.badge[data-market="KOSDAQ"] {
+  color: #ffcf6b;
+  border-color: rgba(255, 207, 107, 0.35);
+}
+.stockName {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-hi);
+  letter-spacing: -0.02em;
+}
+.stockCode {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.stockQuote {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-hi);
+}
+.price em {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-mid);
+  margin-left: 3px;
+}
+.change {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.right {
+  min-width: 0;
+}
+
+.chartLoading {
+  display: grid;
+  place-items: center;
+  height: 460px;
+  color: var(--text-mid);
+  font-size: 14px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1080px) {
+  .cardsRow {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    grid-template-columns: 1fr;
+  }
+}

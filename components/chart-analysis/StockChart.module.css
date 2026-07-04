@@ -1,0 +1,89 @@
+.wrap {
+  padding: 12px 12px 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 2px 4px 10px;
+  flex-wrap: wrap;
+}
+
+.legendGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.maToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--bg-base);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 9px;
+  transition: opacity 0.15s;
+}
+.maDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--ma);
+}
+.maOff {
+  opacity: 0.4;
+}
+.maOff .maDot {
+  background: var(--text-dim);
+}
+
+.gcTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ai);
+  background: var(--ai-soft);
+  border: 1px solid var(--ai-dim);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+.gcDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ai);
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+.priceChart {
+  width: 100%;
+}
+
+.macdLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-mid);
+  padding: 8px 4px 2px;
+  border-top: 1px solid var(--border);
+  margin-top: 6px;
+}
+.macdLabel span {
+  color: var(--text-dim);
+}
+
+.macdChart {
+  width: 100%;
+}
